@@ -20,7 +20,11 @@ urlpatterns = [
     path('logout/', views.logout_request, name='logout'),
 
     path(route='', view=views.get_dealerships, name='index'),
-
+    path(route='dealer/<int:id>/', view=views.get_dealer_details, name='dealer_details'),
+    
+    # path for add a review view
+    path(route='dealer/<int:id>/review', view=views.add_review, name='add_review'),    
+    
     # path for dealer reviews view
 
     # path for add a review view
