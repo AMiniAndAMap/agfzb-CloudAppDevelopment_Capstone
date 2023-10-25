@@ -12,13 +12,14 @@ from django.utils.timezone import now
 class CarMake(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
+    
     def __str__(self):
         return self.name
 
 class CarModel(models.Model):
-    name = models.CharField(max_length=255)
-    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
-    dealer_id = models.IntegerField()
+    make = models.ForeignKey(CarMake, on_delete=models.CASCADE)	
+    name = models.CharField(max_length=50, default='undefined')	
+    id = models.AutoField(primary_key=True)
     type = models.CharField(max_length=255, choices=[('Sedan', 'Sedan'), ('SUV', 'SUV'), ('Wagon', 'Wagon')])
     year = models.DateField()
 
@@ -36,6 +37,35 @@ class CarModel(models.Model):
 
 
 # <HINT> Create a plain Python class `CarDealer` to hold dealer data
+class CarDealer:
+    id = None
+    name = None
+    address = None
+    phone = None
+    email = None
 
+    def __init__(self, id, name, address, phone, email):
+        self.id = id
+        self.name = name
+        self.address = address
+        self.phone = phone
+        self.email = email
+
+    def __str__(self):
+        return self.name
 
 # <HINT> Create a plain Python class `DealerReview` to hold review data
+class DealerReview:
+    id = None
+    dealer_id = None
+    rating = None
+    review = None
+
+    def __init__(self, id, dealer_id, rating, review):
+        self.id = id
+        self.dealer_id = dealer_id
+        self.rating = rating
+        self.review = review
+
+    def __str__(self):
+        return self.review
