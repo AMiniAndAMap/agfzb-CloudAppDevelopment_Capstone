@@ -125,7 +125,7 @@ def get_dealer_by_id_from_cf(url, id):
     return results[0]
 
 def get_request(url, **kwargs):
-    
+    #25RI8FFHrNmTcbGaIdxYqrauceWVI-Mlx_HFQAT6-Vzt
     # If argument contain API KEY
     api_key = kwargs.get("api_key")
     print("GET from {} ".format(url))
