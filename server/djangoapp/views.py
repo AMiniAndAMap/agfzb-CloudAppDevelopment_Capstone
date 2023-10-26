@@ -149,7 +149,7 @@ def add_review(request, id):
             payload["purchase_date"] = request.POST["purchasedate"]
             payload["car_make"] = car.make.name
             payload["car_model"] = car.name
-            payload["car_year"] = int(car.year.strftime("%Y"))
+            #payload["car_year"] = int(car.year.strftime("%Y"))
 
             new_payload = {}
             new_payload["review"] = payload

@@ -85,7 +85,7 @@ def get_dealer_reviews_from_cf(url, **kwargs):
                                    purchase_date = dealer_review["purchase_date"],
                                    car_make = dealer_review["car_make"], 
                                    car_model = dealer_review["car_model"],
-                                   car_year = dealer_review["car_year"], sentiment= "none")
+                                   sentiment= "none")
             
             
             sentiment = analyze_review_sentiments(review_obj.review)
